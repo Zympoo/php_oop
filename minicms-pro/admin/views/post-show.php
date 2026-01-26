@@ -3,9 +3,21 @@ declare(strict_types=1);
 ?>
 <section class="p-6">
     <div class="bg-white p-6 rounded shadow">
-        <h2 class="text-2xl font-bold mb-4">
-            <?php echo htmlspecialchars((string)$post['title'], ENT_QUOTES); ?>
-        </h2>
+        <div class="flex justify-between">
+            <h2 class="text-2xl font-bold mb-4">
+                <?php echo htmlspecialchars((string)$post['title'], ENT_QUOTES); ?>
+            </h2>
+            <div class="space-x-3">
+                <a class="underline" href="/php/minicms-pro/admin/posts/<?php echo
+                (int)$post['id']; ?>/edit">
+                    Bewerken
+                </a>
+                <a class="underline text-red-600" href="/php/minicms-pro/admin/posts/<?php echo
+                (int)$post['id']; ?>/delete">
+                    Verwijderen
+                </a>
+            </div>
+        </div>
         <p class="mb-6">
             <?php echo htmlspecialchars((string)$post['content'], ENT_QUOTES); ?>
         </p>

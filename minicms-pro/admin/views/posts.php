@@ -3,13 +3,19 @@ declare(strict_types=1);
 ?>
 <section class="p-6">
     <div class="bg-white p-6 rounded shadow">
-        <h2 class="text-xl font-bold mb-4">Posts overzicht</h2>
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-bold">Posts overzicht</h2>
+            <a href="/php/minicms-pro/admin/posts/create">
+                + <span class="underline">Nieuwe post</span>
+            </a>
+        </div>
         <table class="w-full text-sm">
             <thead>
             <tr class="text-left border-b">
                 <th class="py-2">Titel</th>
                 <th>Datum</th>
                 <th>Status</th>
+                <th class="text-right">Acties</th>
             </tr>
             </thead>
             <tbody>
@@ -21,10 +27,18 @@ declare(strict_types=1);
                             htmlspecialchars((string)$post['title'], ENT_QUOTES); ?>
                         </a>
                     </td>
-                    <td><?php echo htmlspecialchars((string)$post['created_at'],
-                                ENT_QUOTES); ?></td>
+                    <td><?php echo
+                        htmlspecialchars((string)$post['created_at'], ENT_QUOTES); ?></td>
                     <td><?php echo htmlspecialchars((string)$post['status'],
                                 ENT_QUOTES); ?></td>
+                    <td class="text-right space-x-3">
+                        <a class="underline" href="/php/minicms-pro/admin/posts/<?php echo (int)$post['id']; ?>/edit">
+                            Bewerken
+                        </a>
+                        <a class="underline text-red-600" href="/php/minicms-pro/admin/posts/<?php echo (int)$post['id']; ?>/delete">
+                            Verwijderen
+                        </a>
+                    </td>
                 </tr>
             <?php endforeach; ?>
             </tbody>

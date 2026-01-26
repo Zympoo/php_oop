@@ -7,7 +7,6 @@
         <div class="bg-white p-6 rounded shadow">
             <p class="text-gray-500 text-sm">Users</p>
             <p class="text-2xl font-bold"><?php echo (int)($stats['users'] ?? 0); ?></p>
-            97
         </div>
         <div class="bg-white p-6 rounded shadow">
             <p class="text-gray-500 text-sm">Views</p>
