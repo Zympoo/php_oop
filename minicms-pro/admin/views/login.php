@@ -15,7 +15,7 @@ declare(strict_types=1);
                 </ul>
             </div>
         <?php endif; ?>
-        <form method="post" action="/php/minicms-pro/admin/login" class="space-y4">
+        <form method="post" action="/admin/login" class="space-y4">
             <div>
                 <label class="block text-sm font-bold mb-1"
                        for="email">Email</label>

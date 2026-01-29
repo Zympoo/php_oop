@@ -10,12 +10,12 @@ use Admin\Core\Auth;
                 <?php echo htmlspecialchars((string)$post['title'], ENT_QUOTES); ?>
             </h2>
             <div class="space-x-3">
-                <a class="underline" href="/php/minicms-pro/admin/posts/<?php echo
+                <a class="underline" href="/admin/posts/<?php echo
                 (int)$post['id']; ?>/edit">
                     Bewerken
                 </a>
                 <?php if (Auth::isAdmin()): ?>
-                    <a class="underline text-red-600" href="/php/minicms-pro/admin/posts/<?php echo
+                    <a class="underline text-red-600" href="/admin/posts/<?php echo
                     (int)$post['id']; ?>/delete">
                         Verwijderen
                     </a>
@@ -34,7 +34,7 @@ use Admin\Core\Auth;
             </span>
         </div>
         <div class="mt-6">
-            <a class="underline" href="/php/minicms-pro/admin/posts">Terug naar overzicht</a>
+            <a class="underline" href="/admin/posts">Terug naar overzicht</a>
         </div>
     </div>
 </section>

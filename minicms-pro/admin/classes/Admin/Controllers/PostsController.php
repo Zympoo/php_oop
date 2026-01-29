@@ -105,7 +105,7 @@ class PostsController
             return;
         }
         $this->postsRepository->create($title, $content, $status);
-        header('Location: /php/minicms-pro/admin/posts');
+        header('Location: /admin/posts');
         exit;
     }
 
@@ -181,7 +181,7 @@ class PostsController
             return;
         }
         $this->postsRepository->update($id, $title, $content, $status);
-        header('Location: /php/minicms-pro/admin/posts');
+        header('Location: /admin/posts');
         exit;
     }
     /**
@@ -226,7 +226,7 @@ class PostsController
             return;
         }
         $this->postsRepository->delete($id);
-        header('Location: /php/minicms-pro/admin/posts');
+        header('Location: /admin/posts');
         exit;
     }
 }

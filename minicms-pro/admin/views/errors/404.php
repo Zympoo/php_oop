@@ -15,9 +15,9 @@ declare(strict_types=1);
             </p>
         <?php endif; ?>
         <div class="flex gap-4">
-            <a class="underline" href="/php/minicms-pro/admin">Terug naar
+            <a class="underline" href="/admin">Terug naar
                 dashboard</a>
-            <a class="underline" href="/php/minicms-pro/admin/posts">Naar posts</a>
+            <a class="underline" href="/admin/posts">Naar posts</a>
         </div>
     </div>
 </section>

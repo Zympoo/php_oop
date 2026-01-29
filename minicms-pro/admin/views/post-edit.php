@@ -15,7 +15,7 @@ declare(strict_types=1);
                 </ul>
             </div>
         <?php endif; ?>
-        <form method="post" action="/php/minicms-pro/admin/posts/<?php echo(int)$postId; ?>/update"
+        <form method="post" action="/admin/posts/<?php echo(int)$postId; ?>/update"
               class="space-y-4">
             <div>
                 <label class="block text-sm font-bold mb-1"
@@ -59,7 +59,7 @@ declare(strict_types=1);
                 <button class="border rounded px-4 py-2" type="submit">
                     Update
                 </button>
-                <a class="underline" href="/php/minicms-pro/admin/posts">Terug</a>
+                <a class="underline" href="/admin/posts">Terug</a>
             </div>
         </form>
     </div>

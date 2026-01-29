@@ -99,7 +99,7 @@ class AuthController
          */
         $_SESSION['user_id'] = (int)$user['id'];
         $_SESSION['user_role'] = (string)$user['role_name'];
-        header('Location: /php/minicms-pro/admin');
+        header('Location: /admin');
         exit;
     }
 
@@ -112,7 +112,7 @@ class AuthController
     public function logout(): void
     {
         Auth::logout();
-        header('Location: /php/minicms-pro/admin/login');
+        header('Location: /admin/login');
         exit;
     }
 }

@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require __DIR__ . '/config/app.php';
 require __DIR__ . '/autoload.php';
 
 /**
@@ -12,25 +13,28 @@ use Admin\Controllers\DashboardController;
 use Admin\Controllers\PostsController;
 use Admin\Controllers\ErrorController;
 use Admin\Controllers\AuthController;
+use Admin\Controllers\UsersController;
 use Admin\Core\Router;
 use Admin\Core\Auth;
 use Admin\Repositories\PostsRepository;
 use Admin\Repositories\UsersRepository;
+use Admin\Repositories\RolesRepository;
 use Admin\Models\StatsModel;
 
-$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
-$basePath = '/php/minicms-pro/admin';
-if (str_starts_with($uri, $basePath)) {
-    $uri = substr($uri, strlen($basePath));
+// Path uit de URL halen (zonder querystring)
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?? '/';
+// ADMIN_BASE_PATH (/admin) verwijderen uit de URL
+if (str_starts_with($uri, ADMIN_BASE_PATH)) {
+    $uri = substr($uri, strlen(ADMIN_BASE_PATH));
 }
+// Trailing slash verwijderen en lege string corrigeren
+$uri = rtrim($uri, '/') ?: '/';
 
-$uri = rtrim($uri, '/');
 $uri = $uri === '' ? '/' : $uri;
 
 $publicRoutes = ['/login'];
 if (!Auth::check() && !in_array($uri, $publicRoutes, true)) {
-    header('Location: /php/minicms-pro/admin/login');
+    header('Location: /admin/login');
     exit;
 }
 
@@ -68,14 +72,14 @@ $router->post('/logout', function (): void {
  */
 $router->get('/posts/{id}/delete', function (int $id): void {
     if (!Auth::isAdmin()) {
-        header('Location: /php/minicms-pro/admin/posts');
+        header('Location: /admin/posts');
         exit;
     }
     (new PostsController(PostsRepository::make()))->deleteConfirm($id);
 });
 $router->post('/posts/{id}/delete', function (int $id): void {
     if (!Auth::isAdmin()) {
-        header('Location: /php/minicms-pro/admin/posts');
+        header('Location: /admin/posts');
         exit;
     }
     (new PostsController(PostsRepository::make()))->delete($id);
@@ -129,6 +133,42 @@ $router->post('/posts/{id}/update', function (int $id): void {
  */
 $router->get('/posts/{id}', function (int $id): void {
     (new PostsController(PostsRepository::make()))->show($id);
+});
+
+/**
+ * Users (admin-only)
+ */
+$router->get('/users', function (): void {
+    (new UsersController(UsersRepository::make(),
+        RolesRepository::make()))->index();
+});
+$router->get('/users/create', function (): void {
+    (new UsersController(UsersRepository::make(),
+        RolesRepository::make()))->create();
+});
+$router->post('/users/store', function (): void {
+    (new UsersController(UsersRepository::make(),
+        RolesRepository::make()))->store();
+});
+$router->get('/users/{id}/edit', function (int $id): void {
+    (new UsersController(UsersRepository::make(),
+        RolesRepository::make()))->edit($id);
+});
+$router->post('/users/{id}/update', function (int $id): void {
+    (new UsersController(UsersRepository::make(),
+        RolesRepository::make()))->update($id);
+});
+$router->post('/users/{id}/reset-password', function (int $id): void {
+    (new UsersController(UsersRepository::make(),
+        RolesRepository::make()))->resetPassword($id);
+});
+$router->post('/users/{id}/disable', function (int $id): void {
+    (new UsersController(UsersRepository::make(),
+        RolesRepository::make()))->disable($id);
+});
+$router->post('/users/{id}/enable', function (int $id): void {
+    (new UsersController(UsersRepository::make(),
+        RolesRepository::make()))->enable($id);
 });
 
 $router->dispatch($uri, $method);
