@@ -38,6 +38,7 @@ class View
         require __DIR__ . '/../../../includes/sidebar.php';
         echo '<main class="flex-1">';
         require __DIR__ . '/../../../includes/topbar.php';
+        require __DIR__ . '/../../../includes/flash.php';
         require $viewPath;
         echo '</main>';
         require __DIR__ . '/../../../includes/footer.php';

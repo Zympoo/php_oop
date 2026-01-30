@@ -20,7 +20,7 @@ ob_start(); // start buffer
 <?php else: ?>
     <div class="grid md:grid-cols-2 gap-4">
         <?php foreach ($posts as $post): ?>
-            <article class="rounded-xl border border-white/10 bg-white/5 p6">
+            <article class="rounded-xl border border-white/10 bg-white/5 p-6">
                 <h2 class="text-xl font-semibold">
                     <a class="hover:underline" href="/posts/<?=
                     (int)$post['id'] ?>">

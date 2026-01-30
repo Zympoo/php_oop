@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c91c2649-a4db-487d-89c7-9bce9a83d77f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/minicms-pro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/minicms-pro.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="c91c2649-a4db-487d-89c7-9bce9a83d77f" name="Changes" comment="Cursus t.e.m. p208">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/classes/Admin/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/classes/Admin/Controllers/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/classes/Admin/Controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/classes/Admin/Controllers/PostsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/classes/Admin/Core/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/classes/Admin/Core/View.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/classes/Admin/Repositories/PostsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/classes/Admin/Repositories/PostsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/classes/Admin/Repositories/UsersRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/classes/Admin/Repositories/UsersRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/errors/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/errors/404.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/post-create.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/post-create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/post-delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/post-delete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/post-edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/post-edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/post-show.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/post-show.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/views/posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views/posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/layouts/public.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/layouts/public.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/partials/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/partials/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/posts/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/posts/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/posts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/posts/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,17 +46,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\php\minicms-pro\public\views" />
@@ -87,11 +79,25 @@
       <option name="presentableId" value="Default" />
       <updated>1768909255623</updated>
       <workItem from="1768909257124" duration="4000" />
-      <workItem from="1769689359056" duration="5591000" />
+      <workItem from="1769689359056" duration="5621000" />
+      <workItem from="1769768680263" duration="3255000" />
     </task>
+    <task id="LOCAL-00001" summary="Cursus t.e.m. p208">
+      <option name="closed" value="true" />
+      <created>1769695014904</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1769695014904</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Cursus t.e.m. p208" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cursus t.e.m. p208" />
   </component>
 </project>

@@ -136,10 +136,10 @@ class PostsRepository
     {
     // SQL: enkel published, nieuwste eerst, beperkt via LIMIT
         $sql = "SELECT id, title, content, created_at
-        FROM posts
-        WHERE status = 'published'
-        ORDER BY created_at DESC
-        LIMIT :limit";
+                FROM posts
+                WHERE status = 'published'
+                ORDER BY created_at DESC
+                LIMIT :limit";
 
         // prepare op de bestaande PDO property
         $stmt = $this->pdo->prepare($sql);
@@ -153,6 +153,7 @@ class PostsRepository
         // fetchAll kan false geven -> we willen altijd array
         return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
     }
+
     public function getPublishedAll(): array
     {
         // SQL: alle published posts, nieuwste eerst
@@ -184,7 +185,7 @@ class PostsRepository
         // fetch geeft array of false
         $post = $stmt->fetch(PDO::FETCH_ASSOC);
         return $post ?: null;
-        }
+    }
 
     /**
      * make()

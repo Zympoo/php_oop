@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 namespace Admin\Controllers;
+
+use Admin\Core\Flash;
 use Admin\Core\View;
 use Admin\Repositories\PostsRepository;
 class PostsController
@@ -83,15 +85,20 @@ class PostsController
         $content = trim((string)($_POST['content'] ?? ''));
         $status = (string)($_POST['status'] ?? 'draft');
         $errors = [];
-        if ($title === '') {
-            $errors[] = 'Titel is verplicht.';
+
+        $tekensTitle = str_replace(' ', '', $title);
+        $tekensContent = str_replace(' ', '', $content);
+
+        if ($title === '' || strlen($tekensTitle) < 3) {
+            $errors[] = 'Titel is onjuist ingevoerd.';
         }
-        if ($content === '') {
-            $errors[] = 'Inhoud is verplicht.';
+        if ($content === '' || strlen($tekensContent) < 10) {
+            $errors[] = 'Inhoud is onjuist ingevoerd.';
         }
         if (!in_array($status, ['draft', 'published'], true)) {
             $errors[] = 'Status moet draft of published zijn.';
         }
+
         if (!empty($errors)) {
             View::render('post-create.php', [
                 'title' => 'Nieuwe post',
@@ -105,6 +112,7 @@ class PostsController
             return;
         }
         $this->postsRepository->create($title, $content, $status);
+        Flash::set('Post is aangemaakt.', 'success');
         header('Location: /admin/posts');
         exit;
     }
@@ -182,6 +190,7 @@ class PostsController
         }
         $this->postsRepository->update($id, $title, $content, $status);
         header('Location: /admin/posts');
+        Flash::set('Post is aangepast.', 'success');
         exit;
     }
     /**
@@ -226,6 +235,7 @@ class PostsController
             return;
         }
         $this->postsRepository->delete($id);
+        Flash::set('Post is verwijderd.', 'success');
         header('Location: /admin/posts');
         exit;
     }
